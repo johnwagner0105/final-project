@@ -6,6 +6,7 @@ import { CartContext } from "../context/cartContext";
 import { getProductsById } from "../services/itemServices";
 import { IoPencil } from "react-icons/io5";
 import { UserContext } from "../context/userContext";
+import Swal from "sweetalert2";
 
 const SingleProduct = () => {
   const { isUserOnline } = useContext(UserContext);
@@ -46,6 +47,15 @@ const SingleProduct = () => {
   };
 
   const { addProductToCart } = useContext(CartContext);
+  const handleProductToCart = () => {
+    return addProductToCart(form).then(() => {
+      return Swal.fire({
+        icon: "success",
+        title: "Producto Agregado",
+        text: "Se ha ingresado correctamente su producto al carrito",
+      });
+    });
+  };
 
   return (
     <>
