@@ -86,6 +86,7 @@ const Carousel = () => {
         <div className="carousel-inner">{itemsInCarousel}</div>
         <button
           className="carousel-control-prev bg-dark"
+          style={{ width: "5%" }}
           type="button"
           data-bs-target="#carouselExample"
           data-bs-slide="prev"
@@ -98,6 +99,7 @@ const Carousel = () => {
         </button>
         <button
           className="carousel-control-next bg-dark"
+          style={{ width: "5%" }}
           type="button"
           data-bs-target="#carouselExample"
           data-bs-slide="next"
