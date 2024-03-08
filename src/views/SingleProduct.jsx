@@ -48,13 +48,12 @@ const SingleProduct = () => {
 
   const { addProductToCart } = useContext(CartContext);
   const handleProductToCart = () => {
-    return addProductToCart(form).then(() => {
-      return Swal.fire({
-        icon: "success",
-        title: "Producto Agregado",
-        text: "Se ha ingresado correctamente su producto al carrito",
-      });
+    Swal.fire({
+      icon: "success",
+      title: "Producto Agregado",
+      text: "Se ha ingresado correctamente su producto al carrito",
     });
+    return addProductToCart(form);
   };
 
   return (
@@ -93,7 +92,7 @@ const SingleProduct = () => {
           </div>
           <button
             className="ms-5 fs-5 btn btn-primary"
-            onClick={() => addProductToCart(form)}
+            onClick={handleProductToCart}
           >
             Add to cart
           </button>
